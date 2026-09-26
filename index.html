@@ -1,87 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#050505">
-  <meta name="description" content="ASTRE — Fashion with details. Timeless. Refined. Effortless.">
-  <meta property="og:title" content="ASTRE — Fashion with details.">
-  <meta property="og:description" content="Timeless. Refined. Effortless.">
-  <title>ASTRE — Fashion with details.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTRE — Fashion with details.</title>
+<meta name="description" content="ASTRE — Fashion with details. Timeless. Refined. Effortless.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <main class="experience">
 
-    <div class="noise" aria-hidden="true"></div>
-    <div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
-    <header class="topbar">
-      <span class="micro-brand">ASTRE</span>
-      <span class="micro-status"><span class="status-dot"></span> EST. 2026</span>
-    </header>
+<main>
 
-    <section class="hero" aria-label="ASTRE introduction">
-      <div class="halo halo-one" aria-hidden="true"></div>
-      <div class="halo halo-two" aria-hidden="true"></div>
+  <section class="hero" id="hero">
 
-      <div class="orbit orbit-one" aria-hidden="true"></div>
-      <div class="orbit orbit-two" aria-hidden="true"></div>
+    <div class="light-field" aria-hidden="true">
+      <div class="light-field__sheen"></div>
+    </div>
 
-      <div class="lens" aria-hidden="true"></div>
+    <div class="hero__inner">
 
-      <div class="hero-content">
-        <div class="logo-stage">
-          <div class="logo-glow"></div>
-          <img class="logo" src="logo.jpg" alt="ASTRE — Fashion with details.">
-        </div>
+      <figure class="hero__mark" data-reveal="mark">
+        <img src="logo.png" alt="ASTRE — Fashion with details." width="1095" height="336">
+      </figure>
 
-        <div class="gold-rule">
-          <span></span>
-          <i>✦</i>
-          <span></span>
-        </div>
+      <p class="hero__tagline" data-reveal="tagline">Fashion with details.</p>
 
-        <p class="label reveal reveal-delay-1">THE HOUSE OF ASTRE</p>
+      <div class="hairline" data-reveal="line" aria-hidden="true"></div>
 
-        <h1 class="reveal reveal-delay-2">
-          <span>IS</span>
-          <em>ARRIVING.</em>
-        </h1>
-
-        <p class="statement reveal reveal-delay-3">
-          A new standard of everyday refinement.
-        </p>
-
-        <div class="values reveal reveal-delay-4" aria-label="ASTRE values">
-          <span>TIMELESS</span>
-          <b>•</b>
-          <span>REFINED</span>
-          <b>•</b>
-          <span>EFFORTLESS</span>
-          <b>•</b>
-          <span>OLD MONEY</span>
-        </div>
+      <div class="hero__statement" data-reveal="statement">
+        <p class="statement__eyebrow">The house of Astre</p>
+        <p class="statement__headline">is arriving<span class="statement__dot">.</span></p>
+        <p class="statement__sub">A new standard of everyday refinement.</p>
       </div>
 
-      <div class="edge-note edge-left">DETAILS DEFINE THE DIFFERENCE.</div>
-      <div class="edge-note edge-right">FASHION WITH DETAILS.</div>
+    </div>
 
-      <div class="scroll-mark" aria-hidden="true">
-        <span></span>
-      </div>
-    </section>
+    <div class="hero__values" data-reveal="values">
+      <span>Timeless</span>
+      <i></i>
+      <span>Refined</span>
+      <i></i>
+      <span>Effortless</span>
+      <i></i>
+      <span>Old&nbsp;Money</span>
+    </div>
 
-    <footer class="footer">
-      <span>© 2026 ASTRE</span>
-      <span>THE BEGINNING OF SOMETHING TIMELESS.</span>
+    <div class="scroll-cue" data-reveal="cue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-cue__line"></div>
+    </div>
+
+  </section>
+
+  <section class="philosophy" id="philosophy">
+    <div class="philosophy__inner">
+      <h2 class="philosophy__title">Details define<br>the difference.</h2>
+      <p class="philosophy__text">
+        ASTRE is built around the belief that true style doesn't
+        demand attention. It earns it.
+      </p>
+    </div>
+    <footer class="philosophy__footer">
+      <span>&copy; <span id="year"></span> ASTRE</span>
     </footer>
-  </main>
+  </section>
 
-  <script src="script.js"></script>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
