@@ -223,10 +223,12 @@ img{ max-width: 100%; display: block; }
 
 .scroll-cue{
   position: absolute;
-  left: 50%;
+  left: 0;
+  right: 0;
+  width: max-content;
+  margin: 0 auto;
   bottom: 34px;
   z-index: 2;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
