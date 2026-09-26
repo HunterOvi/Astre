@@ -1,85 +1,44 @@
-// ============================================================
-// ASTRE — Coming Soon
-// Vanilla JS: countdown timer + notify form (no backend)
-// ============================================================
+const hero = document.querySelector(".hero");
+const lens = document.querySelector(".lens");
+const halo = document.querySelector(".halo-one");
 
-document.getElementById('year').textContent = new Date().getFullYear();
+let targetX = 50;
+let targetY = 50;
+let currentX = 50;
+let currentY = 50;
 
-/* ---------------- Countdown ----------------
-   Set your real launch date/time below (local time).
-   Format: new Date('YYYY-MM-DDTHH:MM:SS')
-*/
-const LAUNCH_DATE = new Date('2026-12-25T00:00:00');
+function animateLight() {
+  currentX += (targetX - currentX) * 0.055;
+  currentY += (targetY - currentY) * 0.055;
 
-const els = {
-  days:  document.getElementById('cd-days'),
-  hours: document.getElementById('cd-hours'),
-  mins:  document.getElementById('cd-mins'),
-  secs:  document.getElementById('cd-secs'),
-};
-
-function pad(n){ return String(n).padStart(2, '0'); }
-
-function updateCountdown(){
-  const now = new Date();
-  let diff = LAUNCH_DATE - now;
-
-  if (diff <= 0){
-    els.days.textContent = '00';
-    els.hours.textContent = '00';
-    els.mins.textContent = '00';
-    els.secs.textContent = '00';
-    return;
+  if (lens) {
+    lens.style.left = `${currentX}%`;
+    lens.style.top = `${currentY}%`;
   }
 
-  const day = Math.floor(diff / (1000 * 60 * 60 * 24));
-  diff -= day * (1000 * 60 * 60 * 24);
-  const hour = Math.floor(diff / (1000 * 60 * 60));
-  diff -= hour * (1000 * 60 * 60);
-  const min = Math.floor(diff / (1000 * 60));
-  diff -= min * (1000 * 60);
-  const sec = Math.floor(diff / 1000);
+  if (halo) {
+    const offsetX = (currentX - 50) * 0.12;
+    const offsetY = (currentY - 50) * 0.12;
+    halo.style.transform =
+      `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+  }
 
-  els.days.textContent  = pad(day);
-  els.hours.textContent = pad(hour);
-  els.mins.textContent  = pad(min);
-  els.secs.textContent  = pad(sec);
+  requestAnimationFrame(animateLight);
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+if (window.matchMedia("(pointer: fine)").matches) {
+  window.addEventListener("pointermove", (event) => {
+    targetX = (event.clientX / window.innerWidth) * 100;
+    targetY = (event.clientY / window.innerHeight) * 100;
 
-/* ---------------- Notify form ----------------
-   Static site — no backend. Stores the email locally
-   and shows a confirmation message. Swap the TODO block
-   for a real request to your email/CRM provider when ready.
-*/
-const form = document.getElementById('notify-form');
-const note = document.getElementById('form-note');
+    if (lens) lens.style.opacity = "1";
+  });
 
-form.addEventListener('submit', function (e){
-  e.preventDefault();
-  const emailInput = document.getElementById('email');
-  const email = emailInput.value.trim();
+  hero.addEventListener("pointerleave", () => {
+    targetX = 50;
+    targetY = 50;
+    if (lens) lens.style.opacity = "0";
+  });
+}
 
-  if (!email || !emailInput.checkValidity()){
-    note.textContent = 'Please enter a valid email address.';
-    note.classList.remove('success');
-    return;
-  }
-
-  // TODO: replace with a real request to your email provider
-  // (e.g. Mailchimp, Klaviyo, Formspree, a serverless function, etc.)
-  try {
-    const saved = JSON.parse(localStorage.getItem('astre_notify_list') || '[]');
-    saved.push({ email, date: new Date().toISOString() });
-    localStorage.setItem('astre_notify_list', JSON.stringify(saved));
-  } catch (err) {
-    /* localStorage unavailable — safe to ignore */
-  }
-
-  form.classList.add('success');
-  note.textContent = "You're on the list. Thank you.";
-  note.classList.add('success');
-  emailInput.value = '';
-});
+animateLight();
