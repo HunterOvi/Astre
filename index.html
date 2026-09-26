@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTRE — Fashion With Details</title>
+<meta name="description" content="ASTRE. Fashion with details. Timeless, refined, effortless menswear — arriving soon.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="bg-overlay"></div>
+<div class="grain"></div>
+
+<header class="site-header">
+  <div class="brand-mark">ASTRE</div>
+  <a class="header-link" href="https://instagram.com" target="_blank" rel="noopener">INSTAGRAM</a>
+</header>
+
+<main class="stage">
+  <section class="panel" aria-labelledby="panel-heading">
+
+    <img class="logo" src="astre-logo.jpg" alt="ASTRE — Fashion With Details">
+
+    <p id="panel-heading" class="lede">
+      A new standard in menswear is being prepared —
+      cut with restraint, finished with intent.
+    </p>
+
+    <div class="divider"><span></span><i></i><span></span></div>
+
+    <p class="values">Timeless &nbsp;·&nbsp; Refined &nbsp;·&nbsp; Effortless &nbsp;·&nbsp; Old Money</p>
+
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="count-unit">
+        <span class="count-num" id="cd-days">00</span>
+        <span class="count-label">Days</span>
+      </div>
+      <div class="count-unit">
+        <span class="count-num" id="cd-hours">00</span>
+        <span class="count-label">Hours</span>
+      </div>
+      <div class="count-unit">
+        <span class="count-num" id="cd-mins">00</span>
+        <span class="count-label">Minutes</span>
+      </div>
+      <div class="count-unit">
+        <span class="count-num" id="cd-secs">00</span>
+        <span class="count-label">Seconds</span>
+      </div>
+    </div>
+
+    <form class="notify-form" id="notify-form" novalidate>
+      <label class="visually-hidden" for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required autocomplete="email">
+      <button type="submit">Notify Me</button>
+    </form>
+    <p class="form-note" id="form-note">Be the first to know when ASTRE opens its doors.</p>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>&copy; <span id="year"></span> ASTRE. All rights reserved.</span>
+  <span class="footer-links">
+    <a href="mailto:hello@astre.com">hello@astre.com</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+  </span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
